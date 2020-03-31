@@ -1,0 +1,51 @@
+CREATE TABLE fish (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  start INTEGER NOT NULL,
+  end INTEGER
+);
+
+CREATE TABLE attempt (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  username TEXT NOT NULL,
+  timestamp INTEGER NOT NULL
+);
+
+addAttempt:
+INSERT INTO attempt(username, timestamp)
+VALUES (?, ?);
+
+addFish:
+INSERT INTO fish(start, end)
+VALUES (?, ?);
+
+updateFishStart:
+UPDATE fish SET start = :start WHERE id = :id;
+
+updateFishEnd:
+UPDATE fish SET end = :end WHERE id = :id;
+
+selectLastVisibleFish:
+SELECT * FROM fish WHERE end IS NULL ORDER BY id DESC LIMIT 1;
+
+lastRowId:
+SELECT last_insert_rowid();
+
+deleteAllFishes:
+DELETE FROM fish;
+
+deleteAllAttempts:
+DELETE FROM attempt;
+
+deleteFish:
+DELETE FROM fish WHERE id = ?;
+
+selectFish:
+SELECT * FROM fish WHERE id = ?;
+
+selectAllFish:
+SELECT *
+FROM fish;
+
+selectAllAttempts:
+SELECT *
+FROM attempt;

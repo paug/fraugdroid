@@ -1,4 +1,4 @@
-package com.github.twitch4j.chatbot.kotlin.features
+package fraug.droid.features
 
 import com.github.philippheuer.events4j.annotation.EventSubscriber
 import com.github.twitch4j.chat.events.channel.FollowEvent

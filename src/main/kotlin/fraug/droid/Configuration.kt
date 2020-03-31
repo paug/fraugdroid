@@ -1,4 +1,4 @@
-package com.github.twitch4j.chatbot.kotlin
+package fraug.droid
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy

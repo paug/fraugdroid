@@ -1,15 +1,16 @@
-package com.github.twitch4j.chatbot.kotlin
+package fraug.droid
 
+import ch.qos.logback.classic.Level
+import ch.qos.logback.classic.Logger
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.github.philippheuer.credentialmanager.domain.OAuth2Credential
 import com.github.twitch4j.TwitchClient
 import com.github.twitch4j.TwitchClientBuilder
-import com.github.twitch4j.chatbot.kotlin.features.ChannelNotificationOnDonation
-import com.github.twitch4j.chatbot.kotlin.features.ChannelNotificationOnFollow
-import com.github.twitch4j.chatbot.kotlin.features.ChannelNotificationOnSubscription
-import com.github.twitch4j.chatbot.kotlin.features.WriteChannelChatToConsole
+import fraug.droid.features.*
+import org.slf4j.LoggerFactory
 import kotlin.system.exitProcess
+
 
 object Bot {
 
@@ -58,7 +59,6 @@ object Bot {
         var clientBuilder = TwitchClientBuilder.builder()
         val client: TwitchClient
 
-        //region Chat related configuration
         val credential = OAuth2Credential(
             "twitch",
             configuration.credentials["irc"]
@@ -67,7 +67,6 @@ object Bot {
         clientBuilder = clientBuilder
             .withChatAccount(credential)
             .withEnableChat(true)
-        //endregion
 
         //region Api related configuration
         clientBuilder = clientBuilder
@@ -97,4 +96,9 @@ object Bot {
         return client
     }
 
+    fun sendMessage(message: String) {
+        configuration.channels.forEach {
+            twitchClient.chat.sendMessage(it, message)
+        }
+    }
 }
