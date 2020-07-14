@@ -1,20 +1,13 @@
-# Twitch4J - Kotlin Chatbot Template
+A Twitch chatbot based on [twitch4j-chatbot-kotlin](https://github.com/twitch4j/twitch4j-chatbot-kotlin)
 
-Project Information:
+To run, type:
 
-[![Build Status](https://travis-ci.org/twitch4j/twitch4j-chatbot-kotlin.svg?branch=master)](https://travis-ci.org/twitch4j/twitch4j-chatbot-kotlin)
+```bash
+cp src/main/resources/config.yaml.example src/main/resources/config.yaml
+# edit credentials.irc with a token from https://twitchapps.com/tmi/
+# connect with the account you want to use as bot
+# edit channels, add `frenchandroidusergroup`
 
-Support:
-
-[![Discord](https://img.shields.io/badge/Join-Twitch4J-7289DA.svg?style=flat-square)](https://discord.gg/FQ5vgW3)
-[<img src="https://discordapp.com/api/guilds/143001431388061696/widget.png?style=shield">](https://discord.gg/FQ5vgW3)
-
---------
-
-## A quick note:
-This Chatbot is part of the [Twitch4J API](https://github.com/twitch4j/twitch4j) project.  
-You can find the Java counterpart of this example [here](https://github.com/twitch4j/twitch4j-chatbot).
-
-## Chat Token
-You can generate a oauth chat token using the `Twitch Chat OAuth Password Generator`:
-http://twitchapps.com/tmi/
+# run the bot
+./gradlew shadowJar && java -jar build/libs/fraugdroid.jar
+```

@@ -23,10 +23,10 @@ Voici un rappel de ce que nous n'accepterons pas : blagues ou offenses à propos
             command.startsWith("help") || command.startsWith("commands") -> "https://faug.fr/help"
             command.startsWith("zoom") -> "https://faug.fr/zoom"
             command.startsWith("remo") -> "https://faug.fr/remo"
-            command.startsWith("slido") -> "https://faug.fr/remo"
+            command.startsWith("slido") -> "https://faug.fr/slido"
             command.startsWith("cfp") -> "https://faug.fr/cfp"
             command.contains("feedback") -> "https://faug.fr/feedback"
-            command.startsWith("charte") || command.contains("conduct") -> ""
+            command.startsWith("charte") || command.contains("conduct") -> codeOfConduct
             //command.startsWith("fish") -> addAttempt(event)
             //command.startsWith("leaderboard") -> Leaderboard.summary()
             command.startsWith("hug") -> hug(event)

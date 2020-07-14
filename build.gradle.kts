@@ -32,3 +32,8 @@ dependencies {
     testImplementation("junit:junit:4.13")
 }
 
+tasks.withType(Jar::class.java) {
+    manifest {
+        attributes("Main-Class" to "fraug.droid.LauncherKt")
+    }
+}
