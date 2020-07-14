@@ -6,34 +6,42 @@ import java.util.*
 import kotlin.math.absoluteValue
 
 object WriteChannelChatToConsole {
+    val codeOfConduct = """
+Le FRAUG est fier d’être une communauté ouverte et engagée, respectant les différences et la diversité. Ceci implique qu'aucun comportement ou propos déplacé n'est accepté lors de nos meetups. 
+Voici un rappel de ce que nous n'accepterons pas : blagues ou offenses à propos de la sexualité / race / religion / nationalité / morphologie / âge.
+""".trimIndent()
 
     /** Subscribe to the ChannelMessage Event and write the output to the console */
     @EventSubscriber
     fun onChannelMessage(event: ChannelMessageEvent) {
         //println("${event.user.name}: ${event.message}")
+        if (!event.message.startsWith("!")) {
+            return
+        }
+        val command = event.message.substring(1)
         val response = when {
-            event.message.startsWith("!help") -> "bit.ly/fraugdroid"
-            event.message.startsWith("!zoom") -> "ce soir c'est sur remo.co: https://live.remo.co/e/le-point-sur-les-applis-de-traci"
-            event.message.startsWith("!remo") -> "https://live.remo.co/e/le-point-sur-les-applis-de-traci"
-            event.message.startsWith("!slido") -> "https://app.sli.do/event/s128b9bl"
-            event.message.startsWith("!cfp") -> "https://conference-hall.io/public/event/T4ow4S9EGQaCFFNt6waP"
-            event.message.startsWith("!openfeedback") -> "https://openfeedback.io/fraug4/2020-05-06/zg6s2VSWyjZqPOOU2mJD"
-            event.message.startsWith("!feedback") -> "https://openfeedback.io/fraug4/2020-05-06/zg6s2VSWyjZqPOOU2mJD"
-            //event.message.startsWith("!fish") -> addAttempt(event)
-            //event.message.startsWith("!leaderboard") -> Leaderboard.summary()
-            event.message.startsWith("!hug") -> hug(event)
-            event.message.startsWith("!pizza") -> pizza(event)
+            command.startsWith("help") || command.startsWith("commands") -> "https://faug.fr/help"
+            command.startsWith("zoom") -> "https://faug.fr/zoom"
+            command.startsWith("remo") -> "https://faug.fr/remo"
+            command.startsWith("slido") -> "https://faug.fr/remo"
+            command.startsWith("cfp") -> "https://faug.fr/cfp"
+            command.contains("feedback") -> "https://faug.fr/feedback"
+            command.startsWith("charte") || command.contains("conduct") -> ""
+            //command.startsWith("fish") -> addAttempt(event)
+            //command.startsWith("leaderboard") -> Leaderboard.summary()
+            command.startsWith("hug") -> hug(event)
+            command.startsWith("pizza") -> pizza(event)
             else -> null
         }
 
-        if (response  != null) {
+        if (response != null) {
             event.twitchChat.sendMessage(event.channel.name, response)
         }
     }
 
     private fun hug(event: ChannelMessageEvent): String? {
         var username = event.message.substringAfter("!hug").trim()
-        if (username.isNullOrBlank()) {
+        if (username.isBlank()) {
             username = event.user.name
         }
         return "FraugDroid envoie un hug à ${username} <3 <3"
@@ -48,17 +56,19 @@ object WriteChannelChatToConsole {
         }
         return when {
             visibleFish != null -> listOf("🎣", "🐟", "🐠", "🐡").random()
-            else  -> listOf("👞", "👠", "🥾", "⛸").random()
+            else -> listOf("👞", "👠", "🥾", "⛸").random()
         }
     }
 
     private fun pizza(event: ChannelMessageEvent): String? {
-        val jokes = listOf("Want to hear a joke about pizza? Never mind, it's too cheesy.",
-        "What do you call a sleeping pizza? a piZZZZZZa!",
-        "Why did the man go into the pizza business? He wanted to make some dough!",
-        "Waiter, will my pizza be long? No sir, it will be round!",
-        "What is a dog's favorite pizza? PUParonni!",
-        "What's the difference between a pizza and my pizza jokes? My pizza jokes can't be topped!")
+        val jokes = listOf(
+            "Want to hear a joke about pizza? Never mind, it's too cheesy.",
+            "What do you call a sleeping pizza? a piZZZZZZa!",
+            "Why did the man go into the pizza business? He wanted to make some dough!",
+            "Waiter, will my pizza be long? No sir, it will be round!",
+            "What is a dog's favorite pizza? PUParonni!",
+            "What's the difference between a pizza and my pizza jokes? My pizza jokes can't be topped!"
+        )
 
         return jokes.get(Random().nextInt().absoluteValue.rem(jokes.size))
     }

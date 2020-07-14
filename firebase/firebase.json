@@ -1,0 +1,37 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/slido",
+        "destination": "https://app.sli.do/event/f5denr47",
+        "type": 302
+      },
+      {
+        "source": "/feedback",
+        "destination": "https://openfeedback.io/fraug8/2020-07-15/trkHQG1oWc0L9apFWeU3",
+        "type": 302
+      },
+      {
+        "source": "/help",
+        "destination": "https://docs.google.com/document/d/e/2PACX-1vRfwu5ppKYZp0sLyaotNhVXLypbVZ4k5tcP90I_xLjnSQXiFJc0McZIdBt4oS37eU-7eAmrAfM352kH/pub",
+        "type": 302
+      },
+      {
+        "source": "/cfp",
+        "destination": "https://conference-hall.io/public/event/T4ow4S9EGQaCFFNt6waP",
+        "type": 302
+      },
+      {
+        "source": "/twitch",
+        "destination": "https://twitch.tv/frenchandroidusergroup",
+        "type": 302
+      }
+    ]
+  }
+}

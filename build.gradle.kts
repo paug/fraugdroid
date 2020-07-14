@@ -1,7 +1,7 @@
 plugins {
     id("com.github.johnrengelman.shadow").version("2.0.2")
     id("org.jetbrains.kotlin.jvm").version("1.3.71")
-    id("com.squareup.sqldelight").version("1.3.0-SNAPSHOT")
+    id("com.squareup.sqldelight").version("1.4.0")
     id("org.jetbrains.kotlin.plugin.serialization").version("1.3.71")
 }
 
@@ -24,8 +24,8 @@ dependencies {
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.0")
     implementation("ch.qos.logback:logback-classic:1.1.8")
     implementation("com.jcabi:jcabi-log:0.17.2")
-    implementation("com.squareup.sqldelight:sqlite-driver:1.3.0-SNAPSHOT")
-    implementation("com.squareup.sqldelight:coroutines-extensions:1.3.0-SNAPSHOT")
+    implementation("com.squareup.sqldelight:sqlite-driver:1.4.0")
+    implementation("com.squareup.sqldelight:coroutines-extensions:1.4.0")
     implementation("com.github.ajalt:clikt:2.6.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
 
