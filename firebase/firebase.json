@@ -9,12 +9,12 @@
     "redirects": [
       {
         "source": "/slido",
-        "destination": "https://app.sli.do/event/f5denr47",
+        "destination": "https://app.sli.do/event/g5fg3pvk",
         "type": 302
       },
       {
         "source": "/feedback",
-        "destination": "https://openfeedback.io/fraug8/2020-07-15/trkHQG1oWc0L9apFWeU3",
+        "destination": "https://openfeedback.io/fraug9",
         "type": 302
       },
       {
