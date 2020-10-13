@@ -31,6 +31,11 @@
         "source": "/twitch",
         "destination": "https://twitch.tv/frenchandroidusergroup",
         "type": 302
+      },
+      {
+        "source": "/zoom",
+        "destination": "https://apollographql.zoom.us/j/5200438874?pwd=WGJqZU1UZ0hCSnJKTzFLODFkaW5TUT09",
+        "type": 302
       }
     ]
   }
