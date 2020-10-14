@@ -36,6 +36,11 @@
         "source": "/zoom",
         "destination": "https://apollographql.zoom.us/j/5200438874?pwd=WGJqZU1UZ0hCSnJKTzFLODFkaW5TUT09",
         "type": 302
+      },
+      {
+        "source": "/remo",
+        "destination": "https://live.remo.co/e/fraug-10",
+        "type": 302
       }
     ]
   }
