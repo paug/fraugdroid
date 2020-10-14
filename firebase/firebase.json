@@ -41,6 +41,11 @@
         "source": "/remo",
         "destination": "https://live.remo.co/e/fraug-10",
         "type": 302
+      },
+      {
+        "source": "/test",
+        "destination": "https://www.youtube.com/watch?v=oHg5SJYRHA0",
+        "type": 302
       }
     ]
   }
