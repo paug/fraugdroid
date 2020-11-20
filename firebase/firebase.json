@@ -14,7 +14,7 @@
       },
       {
         "source": "/feedback",
-        "destination": "https://openfeedback.io/fraug10",
+        "destination": "https://openfeedback.io/fraug11",
         "type": 302
       },
       {
@@ -39,7 +39,7 @@
       },
       {
         "source": "/remo",
-        "destination": "https://live.remo.co/e/fraug-10",
+        "destination": "https://live.remo.co/e/fraug-11",
         "type": 302
       },
       {
