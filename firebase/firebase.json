@@ -9,12 +9,12 @@
     "redirects": [
       {
         "source": "/slido",
-        "destination": "https://app.sli.do/event/pyin5hfc",
+        "destination": "https://app.sli.do/event/2tmfukia",
         "type": 302
       },
       {
         "source": "/feedback",
-        "destination": "https://openfeedback.io/fraug11",
+        "destination": "https://openfeedback.io/fraug12",
         "type": 302
       },
       {
@@ -39,7 +39,12 @@
       },
       {
         "source": "/remo",
-        "destination": "https://live.remo.co/e/fraug-11",
+        "destination": "https://live.remo.co/e/fraug-12",
+        "type": 302
+      },
+      {
+        "source": "/gather",
+        "destination": "https://gather.town/app/jmeXkx1FIBU2jQOh/fraug",
         "type": 302
       },
       {
