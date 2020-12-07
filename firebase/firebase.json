@@ -39,7 +39,7 @@
       },
       {
         "source": "/remo",
-        "destination": "https://live.remo.co/e/fraug-12",
+        "destination": "https://live.remo.co/e/fraug12",
         "type": 302
       },
       {
