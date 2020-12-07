@@ -25,6 +25,7 @@ Voici un rappel de ce que nous n'accepterons pas : blagues ou offenses à propos
             command.startsWith("remo") -> "https://fraug.fr/remo"
             command.startsWith("slido") -> "https://fraug.fr/slido"
             command.startsWith("cfp") -> "https://fraug.fr/cfp"
+            command.startsWith("gather") -> "https://fraug.fr/gather"
             command.contains("feedback") -> "https://fraug.fr/feedback"
             command.startsWith("charte") || command.contains("conduct") -> codeOfConduct
             //command.startsWith("fish") -> addAttempt(event)
