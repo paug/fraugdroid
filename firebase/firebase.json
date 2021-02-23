@@ -14,7 +14,7 @@
       },
       {
         "source": "/feedback",
-        "destination": "https://openfeedback.io/fraug13",
+        "destination": "https://openfeedback.io/fraug14",
         "type": 302
       },
       {
