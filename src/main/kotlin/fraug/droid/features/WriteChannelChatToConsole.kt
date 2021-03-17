@@ -11,10 +11,15 @@ Le FRAUG est fier d’être une communauté ouverte et engagée, respectant les 
 Voici un rappel de ce que nous n'accepterons pas : blagues ou offenses à propos de la sexualité / race / religion / nationalité / morphologie / âge.
 """.trimIndent()
 
+    private val participants = mutableSetOf<String>()
+
     /** Subscribe to the ChannelMessage Event and write the output to the console */
     @EventSubscriber
     fun onChannelMessage(event: ChannelMessageEvent) {
         //println("${event.user.name}: ${event.message}")
+        if (event.message.contains("\uD83D\uDC38\uD83D\uDC9A")) {
+            participants.add(event.user.name)
+        }
         if (!event.message.startsWith("!")) {
             return
         }
@@ -32,12 +37,25 @@ Voici un rappel de ce que nous n'accepterons pas : blagues ou offenses à propos
             //command.startsWith("leaderboard") -> Leaderboard.summary()
             command.startsWith("hug") -> hug(event)
             command.startsWith("pizza") -> pizza(event)
+            command.startsWith("tirage") -> draw(event)
             else -> null
         }
 
         if (response != null) {
             event.twitchChat.sendMessage(event.channel.name, response)
         }
+    }
+
+    private fun draw(event: ChannelMessageEvent): String? {
+        if (event.user.name != "fraugdroid" && event.user.name != "frenchandroidusergroup") {
+            return null
+        }
+        if (participants.isEmpty()) {
+            return "pas de participants!"
+        }
+
+        val winnerIndex = kotlin.random.Random(System.currentTimeMillis()).nextInt(participants.size)
+        return "${participants.toList()[winnerIndex]} a été tiré au sort!"
     }
 
     private fun hug(event: ChannelMessageEvent): String? {
