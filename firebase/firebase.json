@@ -41,6 +41,11 @@
         "source": "/test",
         "destination": "https://www.youtube.com/watch?v=oHg5SJYRHA0",
         "type": 302
+      },
+      {
+        "source": "/coc",
+        "destination": "/coc.html",
+        "type": 301
       }
     ]
   }
