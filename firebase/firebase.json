@@ -43,6 +43,11 @@
         "type": 302
       },
       {
+        "source": "/zoom",
+        "destination": "https://deezer.zoom.us/j/87964782603?pwd=TTBLdnlETy96alY3bE9lM2FLNnBxdz09",
+        "type": 302
+      },
+      {
         "source": "/coc",
         "destination": "/coc.html",
         "type": 301
