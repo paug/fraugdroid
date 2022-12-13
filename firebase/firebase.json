@@ -9,12 +9,12 @@
     "redirects": [
       {
         "source": "/slido",
-        "destination": "https://app.sli.do/event/z5ycmfkj/live/questions",
+        "destination": "https://app.sli.do/event/wA1CyzxQ6RMEiqCEqLS4VH",
         "type": 302
       },
       {
         "source": "/feedback",
-        "destination": "https://openfeedback.io/Vaozif1bG2reMjuaYNaE/2021-06-28/R4d8wcKLabZDWI5CUP9b",
+        "destination": "https://openfeedback.io/e6swwSH4aDCT9iWWvxUM/2022-12-16/FyVztY5LfQcWn4rf9VpW",
         "type": 302
       },
       {
